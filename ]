@@ -1,0 +1,24 @@
+{
+   "clusterid": "<%= @clusterid %>",
+   "mgtiface": "<%= @mgtiface %>",
+   "dataiface": "<%= @dataiface>",
+   "kvdb": [
+     "minItems": 1,
+    <% @kvdb.each do |kvdb_uri| -%>
+       "<%= kvdb_uri %>"
+    <% end -%>
+     ],
+   "loggingurl": "<%= @loggingurl  %>",
+    "storage": { 
+    "devices": [
+       "mintItems": 1,
+     <% @devices.each do |device| -%>
+      "<%= device  %>"
+     <% end -%>
+    ]
+    }
+    "debug_level": [
+           "type": "<%= @debug_level%>"
+       ]
+}
+

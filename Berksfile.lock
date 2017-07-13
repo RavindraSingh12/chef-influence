@@ -1,0 +1,10 @@
+DEPENDENCIES
+  pwx_cookbook_customrs
+    path: cookbooks/pwx_cookbook_customrs
+
+GRAPH
+  docker (2.15.14)
+  ntp (3.5.0)
+  pwx_cookbook_customrs (0.1.0)
+    docker (~> 2.0)
+    ntp (>= 0.0.0)
