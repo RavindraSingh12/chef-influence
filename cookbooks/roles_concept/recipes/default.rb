@@ -16,3 +16,11 @@ end
 service 'postgresql' do
   action [:enable, :start]
 end
+
+#search[index, key], this can result in ore then one results
+webnodes =  search['node', 'role:web']
+
+#this is a ruby for each
+webnodes.each do |node|
+  puts node
+end
