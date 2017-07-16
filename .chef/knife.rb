@@ -7,4 +7,6 @@ node_name                "ravidrasinghk"
 client_key               "#{current_dir}/ravidrasinghk.pem"
 chef_server_url          "https://api.chef.io/organizations/kt_chef"
 cookbook_path            ["#{current_dir}/../cookbooks"]
+#added when we want to use our own generator file here we r using lcd_origin 
+#generated using chef generate generator <dir-name>/<generator-template-name>
 chefdk.generator_cookbook "/home/chef-influence/chef-repo/generator/lcd_origin"
