@@ -7,3 +7,4 @@ node_name                "ravidrasinghk"
 client_key               "#{current_dir}/ravidrasinghk.pem"
 chef_server_url          "https://api.chef.io/organizations/kt_chef"
 cookbook_path            ["#{current_dir}/../cookbooks"]
+chefdk.generator_cookbook "/home/chef-influence/chef-repo/generator/lcd_origin"
