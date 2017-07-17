@@ -26,6 +26,9 @@ suites:
       forward:
         - 8080:80
     excludes: centos-6.8
+    verifier:
+      inspec_tests:
+        - test/integration/dev
   - name: prod
     driver:
       run_command: /sbin/init
@@ -38,5 +41,4 @@ suites:
     includes: centos-6.8
     verifier:
       inspec_tests:
-        - test/smoke/default
-    attributes:
+        - test/integration/prod
