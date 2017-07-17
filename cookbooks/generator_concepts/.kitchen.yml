@@ -26,9 +26,10 @@ suites:
       forward:
         - 8080:80
     excludes: centos-6.8
-    verifier:
-      inspec_tests:
-        - test/integration/dev
+#specifying the verifier here is optional becuase under test/integration/<suit-name> kitchen looks by convention.
+#    verifier:
+#      inspec_tests:
+#        - test/integration/dev
   - name: prod
     driver:
       run_command: /sbin/init
@@ -39,6 +40,6 @@ suites:
       forward:
         - 8081:80
     includes: centos-6.8
-    verifier:
-      inspec_tests:
-        - test/integration/prod
+#    verifier:
+#      inspec_tests:
+#        - test/integration/prod

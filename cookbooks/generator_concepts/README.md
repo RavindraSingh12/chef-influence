@@ -15,4 +15,28 @@ and integration testing via chef kitchen.
 
 ![kitchen](https://user-images.githubusercontent.com/17291791/28255678-992ad51e-6aa9-11e7-8de5-5afe1df0551a.png)
 
-includes and excludes present in the .kitchen.yml file will exclude one platform or list of them and include will include one or more of them. 
+includes and excludes present in the .kitchen.yml file will exclude one platform or list of them and include will include one or more of them.
+
+chef generate cookbook will generate .kitchen.yml file in which it refrences explicitly to the test/default/smoke dir.
+
+but we dnt need to do that if we put our test in test/integration/<suit-name>/test.rb
+
+*kitchen* init can create the .kitchen.yml file for us 
+
+kitchen init
+create  .kitchen.yml
+      create  chefignore
+      create  test/integration/default
+
+and this makes the dir structure it refrences automatically to look for the tests. we dnt need to explicitly refrence it by 
+
+ verifier:
+      inspec_tests:
+        - test/integration/<suit-name>
+
+we can specify driver while generating .kitchen.yml file.
+
+kitchen init --driver=drivername
+
+find driver name we want by *kitchen driver discover*
+
