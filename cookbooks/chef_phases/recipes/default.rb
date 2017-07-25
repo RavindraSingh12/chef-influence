@@ -4,6 +4,15 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
+nagiosIP = []
+
+search(:node, "ipaddress:*").each do |ip|
+  file '/etc/motd' do 
+    content '#{ip}'
+  end
+end
+
+
 lazy_message = 'Hello World'
 
 file 'lazy_message' do 
@@ -19,7 +28,7 @@ end
 
 package 'bind-utils' do 
   action :install 
-  notifies :ruun, 'execute[yum-makecache]', :before
+  notifies :run, 'execute[yum-makecache]', :before
 end 
 
 file 'message' do 

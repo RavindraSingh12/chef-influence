@@ -6,4 +6,7 @@ default_attributes 'ntp' => {
   'ntpdate' => {
     'disable' => true
   }
+  'ipaddress' => {
+    node['ipaddress']
+ }
 }
